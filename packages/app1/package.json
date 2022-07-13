@@ -4,7 +4,8 @@
   "private": true,
   "source": "src/index.html",
   "dependencies": {
-    "@apps/shared": "1.0.0"
+    "@apps/shared": "1.0.0",
+    "rrule": "2.6.9"
   },
   "scripts": {
     "build": "vite build",

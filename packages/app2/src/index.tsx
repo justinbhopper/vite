@@ -1,15 +1,10 @@
+import { createRoot } from "react-dom/client";
 import { App } from '@apps/shared';
-import { StrictMode } from 'react';
-import { render } from 'react-dom';
-import Main from 'components/Main';
+import Main from './components/Main';
 
-const appWrapper = document.getElementById('app');
-
-render(
-  <StrictMode>
-    <App>
-      <Main />
-    </App>
-  </StrictMode>,
-  appWrapper
+const root = createRoot(document.getElementById("app")!);
+root.render(
+  <App>
+    <Main />
+  </App>
 );
