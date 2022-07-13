@@ -2,9 +2,10 @@ import vitePluginReact from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import inliner from '@vgrid/sass-inline-svg';
+import brotli from "rollup-plugin-brotli";
 import path from "path";
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   build: {
     outDir: 'build',
     sourcemap: true,
@@ -49,5 +50,9 @@ export default defineConfig({
       ],
     },
   },
-  plugins: [vitePluginReact(), tsconfigPaths()],
-});
+  plugins: [
+    vitePluginReact(),
+    tsconfigPaths(),
+    mode === "production" ? brotli() : undefined,
+  ],
+}));
