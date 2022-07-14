@@ -5,6 +5,7 @@ import { TestSharedComp } from '@apps/shared';
 import { config } from './config';
 import { Bells } from "./images";
 import { ThemeMounter } from './themeMounter';
+import { foo } from "folderA";
 
 const StyledDiv = styled.div`
   color: orange;
@@ -23,7 +24,7 @@ const Main = () => {
   return (
     <div onClick={() => setClickCount(c => c + 1)}>
       <ThemeMounter enabled={themeEnabled} />
-      <h3>App 1 (test) {rrule.toText()}</h3>
+      <h3>App 1 (test) {rrule.toText()} {foo}</h3>
       <TestSharedComp />
       <div className="test">Click count: {clickCount}</div>
       <img src={Bells} />

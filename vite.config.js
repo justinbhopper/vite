@@ -29,7 +29,6 @@ export default defineConfig(({ mode }) => {
     },
     css: {
       preprocessorOptions: {
-        output: false,
         scss: {
           functions: {
             'svg-icon($path, $selectors: null)': inliner(
